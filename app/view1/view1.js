@@ -25,8 +25,6 @@ angular.module('myApp.view1', ['ngRoute'])
   $scope.conversation = [];
 
   $scope.exampleQuestions = [
-    "What Indian has the highest batting average?",
-    "What England has the highest batting Average?",
     "Who has the most balls faced?",
     "Who has the least balls faced?",
     "Who has the most runs?",
