@@ -1,0 +1,19 @@
+<div class="bbc-conversation bbc-login">
+  <div class="bbc-login-box">
+    <h1 class="bbc-h1">CrickStats</h1>
+    <div class="bbc-full-width">
+      <span class="bbc-login-label">Username: </span>
+      <input class="bbc-login-input" type="text" ng-model="username"></input>
+    </div>
+    <div class="bbc-full-width">
+      <span class="bbc-login-label">Password: </span>
+      <input class="bbc-login-input" type="password" ng-model="password"></input>
+    </div>
+    <div class="bbc-full-width">
+      <button class="btn btn-login" ng-click="login()">Login</button>
+    </div>
+    <div class="bbc-full-width bbc-login-error">
+      {{error}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+html, body, .bbc-container {
+  height: 100%;
+}
+
+.bbc-login {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.bbc-login-box {
+  width: 400px;
+  height: 600px;
+  background: white;
+  border: 2px solid #bbb;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 40px;
+}
+
+.bbc-h1 {
+  text-align: center;
+  width: 100%;
+  margin: 0 0 40px 0;
+  color: #468C3E;
+  font-family: 'Trebuchet MS1', Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 50px;
+}
+
+.bbc-full-width {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.bbc-login-label {
+  width: 100px;
+  display: inline-block;
+}
+
+.bbc-login-input {
+  width: 212px;
+}
+
+.btn-login {
+  width: 100%;
+  margin: 40px 0 0 0;
+  border-radius: 0;
+  background-color: #468C3E;
+  border: none;
+  color: white;
+}
+
+.btn-login:hover, .btn-login:focus {
+  color: white;
+}
+
+.bbc-login-error {
+  height: 50px;
+  text-align: center;
+}
+
+.bbc-conversation {
+  height: calc(100% - 34px);
+  padding: 20px 0;
+  background-color: #a9d2a5;
+  overflow-y: scroll;
+}
+
+.bbc-question, .bbc-answer {
+  padding: 10px 40px;
+  margin: 0;
+  color: white;
+  display: flex;
+}
+
+.bbc-question .glyphicon {
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+
+.bbc-question {
+  background-color: #a9d2a5;
+}
+
+.bbc-answer {
+  background-color: #81af7c;
+}
+
+.bbc-answer .bbc-confidence {
+  color: #dadada;
+  text-align: right;
+}
+
+.bbc-logo {
+  width: 40px;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.bbc-logo .glyphicon {
+  margin-right: 20px;
+}
+
+.bbc-logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.bbc-text {
+  width: calc(100% - 60px);
+}
+
+.bbc-ask-question {
+  width: 100%;
+}
+
+.bbc-ask-question .bbc-input-group {
+  display: inline-block;
+  width: calc(100% - 120px);
+  border-radius: 0;
+  border-color: #468C3E;
+}
+
+.bbc-ask-question .bbc-input-addon {
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+  border-radius: 0;
+  background-color: #468C3E;
+  border: none;
+  color: white;
+  text-shadow: none;
+}
+
+/* Bootstrap overrides */

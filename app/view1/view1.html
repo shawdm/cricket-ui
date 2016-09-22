@@ -1,0 +1,26 @@
+<div class="bbc-conversation">
+  <div ng-repeat="c in conversation">
+    <div class="bbc-question">
+      <div class="bbc-logo">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      </div>
+      <div class="bbc-text">
+        {{c.question}}
+      </div>
+    </div>
+    <div class="bbc-answer">
+      <div class="bbc-logo">
+        <img src="images/watson-logo.png" />
+      </div>
+      <div class="bbc-text">
+        {{c.answer}}
+        <div class="bbc-confidence" ng-show='c.from'><small>{{c.from}} - {{c.confidence}}%</small></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="input-group bbc-ask-question">
+  <input type="text" class="form-control bbc-input-group" placeholder="{{exampleQuestions[0]}}" ng-model="question" ng-keydown="key($event)" ng-keypress="key($event)">
+  <button type="button" class="btn btn-default bbc-input-addon" ng-disabled="answering" ng-click="ask()">Ask Hudson</button>
+</div>

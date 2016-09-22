@@ -1,0 +1,6 @@
+applications:
+- host: cricket-v2-ui
+  name: cricket-v2-ui
+  path: .
+  instances: 1
+  memory: 256M
