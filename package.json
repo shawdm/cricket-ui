@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "cfenv": "1.0.x"
+    "cfenv": "1.0.x",
+    "basic-auth-connect": "1.0.*"
   }
 }

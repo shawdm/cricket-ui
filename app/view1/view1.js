@@ -11,44 +11,35 @@ angular.module('myApp.view1', ['ngRoute'])
 
 .controller('View1Ctrl', ['$scope', '$http', '$q', function($scope, $http, $q) {
 
-  //var nodeRed = 'http://bbc-nr.mybluemix.net/';
   var nodeRed = 'http://cricket-v2-nodered.eu-gb.mybluemix.net/';
 
-
+  /*
   $scope.conversation = [{
     question: 'Who is Sachin Tendulkar?',
     answer: 'Sachin Ramesh Tendulkar is a former Indian cricketer and captain, widely regarded as one of the greatest batsmen of all time. He took up cricket at the age of eleven, made his Test debut on 15 November 1989 against Pakistan in Karachi at the age of sixteen, and went on to represent Mumbai domestically and India internationally for close to twenty-four years. He is the only player to have scored one hundred international centuries, the first batsman to score a double century in a One Day International, the holder of the record for the number of runs in both ODI and Test cricket, and the only player to complete more than 30,000 runs in international cricket.',
     from: 'DuckDuckGo',
     confidence: '100'
   }];
+  */
+
+  $scope.conversation = [];
 
   $scope.exampleQuestions = [
-    "what is sachin tendulkar date of birth",
-    "what is sachin tendulkar place of birth",
-    "what is sachin tendulkar religion",
-    "what is sachin tendulkar role",
-    "what is sachin tendulkar batting average",
-    "what is sachin tendulkar bowling average",
-    "what is sachin tendulkar batting hand",
-    "what is sachin tendulkar bowling hand",
-    "what is sachin tendulkar nickname",
-    "who does sachin tendulkar play for",
-    "what is sachin tendulkar captaincy list",
-    "what is sachin tendulkar man of the match list",
-    "what is andrew strauss batting average",
-    "what is andrew strauss career runs",
-    "what is andrew strauss total runs",
-    "what is andrew strauss balls faced",
-    "what is andrew strauss total outs",
-    "what is andrew strauss batting innings",
-    "what is andrew strauss career matches",
-    "what is andrew strauss total matches",
-    "what player has the highest batting average",
-    "what player has the lowest batting average",
-    "who has the highest batting average",
-    "what Aussie has the highest batting average",
-    "what Aussie has the highest batting average in an ODI",
-    "what Aussie has the highest batting average in an ODI first innings"
+    "What Indian has the highest batting average?",
+    "What England has the highest batting Average?",
+    "Who has the most balls faced?",
+    "Who has the least balls faced?",
+    "Who has the most runs?",
+    "Who has the least runs?",
+    "Who has the highest batting average?",
+    "Who has the lowest batting average?",
+    "Who has the least total outs?",
+    "Who has the most total outs?",
+    "What is JE Roots batting average?",
+    "How many career matches has JE Root played?",
+    "How many balls faced has JE Root had?",
+    "How many runs has JE Root scored against Australia?",
+    "What is JE root batting average against Australia?"
   ];
   var exampleIndex = 0;
 
@@ -104,6 +95,8 @@ angular.module('myApp.view1', ['ngRoute'])
     if ($scope.question && !$scope.answering) {
       $scope.answering = true;
 
+
+      addQA($scope.question, false, false, false);
       //var ddg = $http.post(nodeRed + 'ddg', {question: $scope.question});
       //var dbpedia = $http.post(nodeRed + 'dbpedia', {question: $scope.question});
       var stats = $http.post(nodeRed + 'stats', {question: $scope.question});
@@ -124,19 +117,18 @@ angular.module('myApp.view1', ['ngRoute'])
 
           // TODO change flow so these are kept in json
           result = JSON.parse(result.result);
-          console.dir(result);
           if (result && result.question && result.question.text && result.answers && result.answers.length > 0) {
             var questionText = result.question.text;
             var answerText = result.answers[0].chatty_text;
             var answerSource = result.answers[0].source.name;
             var answerConfidence = result.answers[0].answer_confidence;
-            addQA(questionText, answerText, answerSource, answerConfidence);
+            addQA(false, answerText, answerSource, answerConfidence);
           } else {
             addFailedQA();
           }
           $scope.answering = false;
         }, function(response) {
-          console.log(response);
+
         });
     }
   };

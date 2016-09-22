@@ -1,6 +1,6 @@
 <div class="bbc-conversation">
   <div ng-repeat="c in conversation">
-    <div class="bbc-question">
+    <div class="bbc-question" ng-if="c.question != false">
       <div class="bbc-logo">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
       </div>
@@ -8,7 +8,7 @@
         {{c.question}}
       </div>
     </div>
-    <div class="bbc-answer">
+    <div class="bbc-answer" ng-if="c.answer != false">
       <div class="bbc-logo">
         <img src="images/watson-logo.png" />
       </div>
