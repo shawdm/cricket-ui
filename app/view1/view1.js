@@ -88,6 +88,10 @@ angular.module('myApp.view1', ['ngRoute'])
 
 
       addQA($scope.question, false, false, false);
+
+      // clear text
+      $scope.question = '';
+
       //var ddg = $http.post(nodeRed + 'ddg', {question: $scope.question});
       //var dbpedia = $http.post(nodeRed + 'dbpedia', {question: $scope.question});
       var stats = $http.post(nodeRed + 'stats', {question: $scope.question});
