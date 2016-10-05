@@ -89,8 +89,6 @@ angular.module('myApp.view1', ['ngRoute'])
 
       addQA($scope.question, false, false, false);
 
-      // clear text
-      $scope.question = '';
 
       //var ddg = $http.post(nodeRed + 'ddg', {question: $scope.question});
       //var dbpedia = $http.post(nodeRed + 'dbpedia', {question: $scope.question});
@@ -118,6 +116,9 @@ angular.module('myApp.view1', ['ngRoute'])
             var answerSource = result.answers[0].source.name;
             var answerConfidence = result.answers[0].answer_confidence;
             addQA(false, answerText, answerSource, answerConfidence);
+
+            // clear text
+            $scope.question = '';
           } else {
             addFailedQA();
           }
